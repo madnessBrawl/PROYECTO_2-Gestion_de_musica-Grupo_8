@@ -1,0 +1,126 @@
+/* ESTILO GENERAL - eliminar los estilos que los navegadores por defecto*/
+/* 
+  ::before y ::after son pseudo-elementos que permiten insertar contenido antes o después del contenido real de un elemento.
+  box-sizing: border-box -> hace que el padding y el borde se incluyan dentro del ancho
+*/
+*, *::before, *::after {
+    box-sizing: border-box; 
+    margin: 0;              
+    padding: 0;             
+    border-radius: 0px !important; /* Esquinas completamente ortogonales/rectas sin redondeado */
+}
+
+/* =================================================
+   PARAMETROS GLOBALES Y VARIABLES DE CONFIGURACIÓN
+   ================================================= */
+
+:root {
+    /* Paleta de colores por defecto */
+    --color-fondo-pagina-principal: #f8f9fa;       
+    --color-fondo-pie-de-pagina: #6BBF35;     
+    --color-texto-principal: #1e293b;  
+    --color-texto-secundario: #3b4657;          
+    --color-borde: #e2e8f0;             
+    --max-anchura: 1440px; /*tamaño por defecto de la pagina*/
+}
+
+
+/*paletas de colores para el modo oscuro*/
+[data-theme="dark"] {
+    /* Paleta de Colores - Modo Oscuro */
+    --color-fondo-pagina-principal: #0f172a;       
+    --color-fondo-pie-de-pagina: #1e293b;     
+    --color-texto-principal: #f8fafc;  
+    --color-texto-secundario: #94a3b8; 
+    --color-borde: #334155;             
+    --sombra-header: 0 4px 20px rgba(0, 0, 0, 0.35); 
+}
+
+
+/*cuerpo de todo el html*/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;       
+    background-color: var(--color-fondo-pagina-principal); 
+    color: var(--color-texto-principal);     
+    min-height: 100vh;  /*altura minima en vh */                      
+    display: flex;
+    flex-direction: column;                    
+    overflow-x: hidden;  /* Evita el scroll horizontal causado por elementos que puedan desbordar el ancho de la ventana */                     
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+/* ==========================================================================
+   ESTRUCTURA DEL MARCO SUPERIOR (HEADER)
+   ========================================================================== */
+
+/*marco superior de la pagina*/
+.marco-superior {
+    background-color: var(--color-fondo-pie-de-pagina);  /*color de fondo*/
+    border-bottom: 2px solid var(--color-borde); /* Línea divisoria ligeramente más gruesa para dar presencia */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06); /* Sombra ligeramente más pronunciada para el marco */              
+    position: sticky;  /* sticky para que el marco permanezca visible al hacer scroll */                         
+    top: 0;   /* Posición fija en la parte superior de la ventana para mantener el marco siempre visible al hacer scroll */                                      
+    z-index: 1000; /* Asegura que el marco siempre esté por encima de otros elementos al hacer scroll */                            
+    padding: 25px 30px;                             
+    transition: background-color 0.3s ease, border-color 0.3s ease, padding 0.3s ease; /* Transiciones suaves para cambios de estado y modo oscuro */
+}
+
+/*contenido del marco superior de la pagina*/
+.marco-superior-contenido {
+    max-width: var(--max-anchura);        
+    margin: 0 auto;           
+    display: flex;            
+    justify-content: flex-start; /* Asegura la alineación hacia el extremo izquierdo */
+    align-items: center;      
+}
+
+/* agrupacion del logo y el título dentro del marco superior para un mejor control de su posicion*/
+.logo-y-titulo {
+    display: flex;
+    align-items: center;      /* Alineación perfectamente centrada en el eje vertical */
+    /* CAMBIO: Se aumentó la separación a 20px para mejorar la armonía del espacio en el marco grande */
+    gap: 20px;  /*espacio entre los elementos*/              
+    width: 100%; /*usa todo el ancho disponible*/
+}
+
+/*imagen del logo de la pagina*/
+.logo-principal {
+    display: block;
+    width: 65px;       
+    height: 65px;      
+    object-fit: contain; /* Protege el aspecto ratio de la imagen original sin estirarla */
+    border: none;
+}
+
+/*titulo principal de la pagina*/
+.titulo-principal {
+    font-size: 26px;          
+    font-weight: 700;          
+    color: var(--color-texto-principal); 
+    text-align: left; 
+    line-height: 1.1;
+    letter-spacing: -0.5px;   /* Ajuste de tracking para un acabado tipográfico más pulido */
+}
+
+/* ==========================================================================
+   ESTRUCTURA BASE DE LA PAGINA (MAIN)
+   ========================================================================== */
+
+/*main principal por su id por que es unico*/
+#main-Principal {
+    flex: 1;                  
+    max-width: var(--max-anchura);
+    width: 100%;
+    margin: 0 auto;           
+    padding: 40px 30px;       
+}
+
+/*pie de pagina*/
+.pie-de-pagina {
+    text-align: center;       
+    padding: 25px;            
+    font-size: 13px;          
+    color: var(--color-texto-secundario);
+    border-top: 1px solid #c9ced4; /* Línea divisoria sutil para separar el pie de página del contenido principal */
+    background-color: var(--color-fondo-pagina-principal);
+}
