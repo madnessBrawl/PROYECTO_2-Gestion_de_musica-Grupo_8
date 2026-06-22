@@ -79,22 +79,22 @@ body {
     display: flex;
     align-items: center;      /* Alineación perfectamente centrada en el eje vertical */
     /* CAMBIO: Se aumentó la separación a 20px para mejorar la armonía del espacio en el marco grande */
-    gap: 20px;  /*espacio entre los elementos*/              
+    gap: 10px;  /*espacio entre los elementos*/              
     width: 100%; /*usa todo el ancho disponible*/
 }
 
 /*imagen del logo de la pagina*/
 .logo-principal {
     display: block;
-    width: 65px;       
-    height: 65px;      
+    width: 100px;       
+    height: 100px;      
     object-fit: contain; /* Protege el aspecto ratio de la imagen original sin estirarla */
     border: none;
 }
 
 /*titulo principal de la pagina*/
 .titulo-principal {
-    font-size: 26px;          
+    font-size: 35px;          
     font-weight: 700;          
     color: var(--color-texto-principal); 
     text-align: left; 
