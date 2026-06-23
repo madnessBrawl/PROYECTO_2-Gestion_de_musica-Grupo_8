@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mis Álbumes Favoritos - Deezer Manager</title>
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="stylesheet" href="estilos-mis-albumes.css">
+        <script src="script-mis-albumes.js"></script>
+        <link rel="icon" href="data:,"> <!-- x-->
+    </head>
+    <body> <!-- Estructura Principal de la Página -->
+        
+        <header class="marco-superior"> <!-- Marco Superior de la pagina -->
+            <div class="marco-superior-contenido">  <!--contenido del Marco Superior  -->
+
+                <div class="logo-y-titulo">
+                    <img src="imagenes/logo-Pagina-PixelRadio.png" alt="Logo de la pagina" class="logo-principal" > <!-- Logo de la Página -->
+                    <h1 class="titulo-principal">Pixel Radio</h1> <!-- Título de la Página -->
+                </div>
+
+                <div class="controles-derecha"> 
+
+                    <button id="btn-modo" class="btn-accion"> 
+                        <img id="img-modo" src="imagenes/modo-oscuro-logo.png" alt="Icono Modo"> 
+                        <span id="texto-modo">Modo oscuro</span> 
+                    </button>
+
+                    <button id="btn-volver" class="btn-accion" onclick="window.location.href='index.html'"> 
+                        <img src="imagenes/salir-de-pagina-logo.png" alt="Icono Volver"> 
+                        <span>Volver</span> 
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main id="main-Principal"> <!-- Contenido Principal de la Página -->
+            <div class="encabezado-tabla"> 
+                <h2 class="titulo-seccion">Álbumes Favoritos</h2> 
+
+                <div class="contenedor-filtro"> 
+                    <label for="filtro-estrellas" class="etiqueta-filtro">Filtro</label> 
+                    <select id="filtro-estrellas" class="selector-cuadrado"> 
+                        <option value="todos">Todos</option> 
+                        <option value="0">Sin estrellas</option> 
+                        <option value="1">1 estrella</option> 
+                        <option value="2">2 estrellas</option> 
+                        <option value="3">3 estrellas</option> 
+                        <option value="4">4 estrellas</option> 
+                        <option value="5">5 estrellas</option> 
+                    </select>
+                </div>
+            </div>
+
+            <div class="contenedor-responsivo-tabla"> 
+                <table class="tabla-albumes" id="tabla-favoritos"> 
+                    <thead> 
+                        <tr> 
+                            <th>Portada</th> 
+                            <th>ID</th> 
+                            <th>Álbum</th> 
+                            <th>Artista</th> 
+                            <th>Calificación</th> 
+                        </tr>
+                    </thead>
+
+                    <tbody id="cuerpo-tabla"> </tbody>
+                </table>
+            </div>
+        </main>
+
+        <footer class="pie-de-pagina"> <!-- Pie de pagina -->
+            <p>&copy; Pixel radio fue creado en mayo de 2026 - todo los derechos reservados|UCAB|Instagram|X|Facebook|Youtube|</p>
+        </footer>
+        
+    </body>
+</html>

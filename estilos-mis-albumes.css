@@ -1,0 +1,118 @@
+/* ================= VARIABLES EXCLUSIVAS DEl mis-albumes.html ================= */
+
+:root {
+    --color-tabla-cabecera: #ffff33; /* Amarillo del boceto */
+    --color-tabla-fila: #70ad47; /* Verde del boceto */
+}
+
+[data-theme="dark"] {
+    --color-tabla-cabecera: #b3b300; /* Amarillo oscuro */
+    --color-tabla-fila: #2d5a1e; /* Verde oscuro */
+}
+
+/* ================= MODIFICACIONES AL HEADER BASE ================= */
+/* Sobrescribimos el justify-content base para separar el logo de los botones */
+.marco-superior-contenido {
+    justify-content: space-between !important; 
+}
+
+.controles-derecha {
+    display: flex; /* Agrupa botones a la derecha */
+    gap: 20px; /* Separación entre botones */
+}
+
+.btn-accion {
+    background: transparent; /* Sin fondo */
+    border: none; /* Sin borde */
+    display: flex; /* Flexbox interno */
+    flex-direction: column; /* Icono arriba, texto abajo */
+    align-items: center; /* Centra contenido */
+    cursor: pointer; /* Cursor interactivo */
+    color: var(--color-texto-principal); /* Hereda color del tema */
+    font-weight: bold; /* Texto resaltado */
+    font-family: inherit; /* Hereda tipografía */
+}
+
+.btn-accion img {
+    width: 40px; /* Tamaño del icono */
+    height: 40px;
+    margin-bottom: 5px; /* Espaciado con el texto */
+}
+
+/* ================= CONTENIDO ESPECÍFICO (FILTRO Y TABLA) ================= */
+.encabezado-tabla {
+    display: flex; /* Alinea título y filtro */
+    justify-content: space-between; /* Extremos opuestos */
+    align-items: flex-end; /* Alinea por debajo */
+    margin-bottom: 15px; /* Separación de la tabla */
+}
+
+.titulo-seccion {
+    font-size: 32px; /* Título principal */
+    font-weight: bold;
+}
+
+.contenedor-filtro {
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-end; /* Justifica a la derecha */
+}
+
+.etiqueta-filtro {
+    font-weight: bold; 
+    margin-bottom: 5px; 
+}
+
+.selector-cuadrado {
+    background-color: var(--color-tabla-cabecera); /* Amarillo */
+    color: #000; /* Texto siempre negro */
+    border: 2px solid var(--color-texto-principal); /* Borde que se adapta al tema */
+    padding: 10px 30px; /* Tamaño */
+    font-size: 18px; 
+    font-weight: bold; 
+    cursor: pointer; 
+}
+
+.contenedor-responsivo-tabla {
+    width: 100%; 
+    overflow-x: auto; /* Permite scroll horizontal en móviles */
+}
+
+.tabla-albumes {
+    width: 100%; 
+    border-collapse: collapse; /* Une bordes */
+    text-align: center; /* Centra textos */
+    font-size: 18px; 
+    font-weight: bold; 
+}
+
+.tabla-albumes th {
+    background-color: var(--color-tabla-cabecera); 
+    color: #000; 
+    padding: 15px; 
+}
+
+.tabla-albumes td {
+    padding: 15px; 
+    background-color: var(--color-tabla-fila); 
+    color: #fff; /* Texto blanco (Boceto) */
+    border-bottom: 4px solid #fff; /* Línea separadora blanca */
+}
+
+.portada-img {
+    width: 60px; 
+    height: 60px; 
+    object-fit: cover; /* Evita que la imagen se aplaste */
+}
+
+.estrella-calificacion {
+    width: 30px; 
+    height: 30px; 
+    cursor: pointer; 
+    margin: 0 2px; 
+    transition: transform 0.2s; /* Efecto hover */
+}
+
+.estrella-calificacion:hover {
+    transform: scale(1.2); /* Crece ligeramente al pasar el mouse */
+}

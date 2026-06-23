@@ -4,9 +4,9 @@
   box-sizing: border-box -> hace que el padding y el borde se incluyan dentro del ancho
 */
 *, *::before, *::after {
-    box-sizing: border-box; 
-    margin: 0;              
-    padding: 0;             
+    box-sizing: border-box;  /* Borde y relleno en el ancho */
+    margin: 0;     /* Sin margen externo */        
+    padding: 0;   /* Sin margen interno */      
     border-radius: 0px !important; /* Esquinas completamente ortogonales/rectas sin redondeado */
 }
 
