@@ -58,10 +58,7 @@
     align-items: flex-end; /* Justifica a la derecha */
 }
 
-.etiqueta-filtro {
-    font-weight: bold; 
-    margin-bottom: 5px; 
-}
+
 
 .selector-cuadrado {
     background-color: var(--color-tabla-cabecera); /* Amarillo */
