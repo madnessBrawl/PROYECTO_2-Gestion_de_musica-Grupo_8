@@ -1,7 +1,9 @@
-// Aseguramos que el DOM cargue antes de ejecutar el script
+// LOGICA PARA LOS ALBUMES PRIVADOS 
+
+// NOTA:Aseguramos que el DOM cargue antes de ejecutar el script
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ================= DATOS SIMULADOS API DEEZER ================= */
+    /* ================= DATOS SIMULADOS API DEEZER (temporalmente) ================= */
     const mockAlbumes = [
         { id: "22", title: "Golden Experience", artist: { name: "Prince" }, cover_medium: "https://e-cdns-images.dzcdn.net/images/cover/b41a547ca2399203a9f0f977bd0bdfb9/250x250-000000-80-0-0.jpg" },
         { id: "101", title: "Abbey Road", artist: { name: "The Beatles" }, cover_medium: "https://e-cdns-images.dzcdn.net/images/cover/152912a7bd20ec82f0dd7fb3cc92cb62/250x250-000000-80-0-0.jpg" },
@@ -137,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
         textoModo.textContent = "Modo claro";
     }
 
-    // Funcionalidad de cambio de tema
+    // Funcionalidad de cambio de tema: modo claro/oscuro
     btnModo.addEventListener("click", () => {
         const esOscuro = document.documentElement.getAttribute("data-theme") === "dark";
         

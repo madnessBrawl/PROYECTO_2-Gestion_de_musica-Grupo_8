@@ -5,38 +5,40 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Mis Álbumes Favoritos - Deezer Manager</title>
         <link rel="stylesheet" href="estilos.css">
-        <link rel="stylesheet" href="estilos-mis-albumes.css">
+        <link rel="stylesheet" href="estilos-mis-albumes.css"> <!-- css de mis albumes-->
     </head>
     <body> <!-- Estructura Principal de la Página -->
         
         <header class="marco-superior"> <!-- Marco Superior de la pagina -->
             <div class="marco-superior-contenido">  <!--contenido del Marco Superior  -->
 
-                <div class="logo-y-titulo">
+                <div class="logo-y-titulo"> <!-- contenedor del contenido de la izquierda -->
                     <img src="imagenes/logo-Pagina-PixelRadio.png" alt="Logo de la pagina" class="logo-principal" > <!-- Logo de la Página -->
                     <h1 class="titulo-principal">Pixel Radio</h1> <!-- Título de la Página -->
                 </div>
 
-                <div class="controles-derecha"> 
+                <div class="botones-header-derecha"> <!-- contenedor del contenido de la derecha del header -->
 
-                    <button id="btn-modo" class="btn-accion"> 
+                    <button id="btn-modo" class="btn-accion">  <!-- Boton de modo oscuro -->
                         <img id="img-modo" src="imagenes/modo-oscuro-logo.png" alt="Icono Modo"> 
-                        <span id="texto-modo">Modo oscuro</span> 
+                        <span id="texto-modo">Modo oscuro</span> <!-- subtitulo del boton-->
                     </button>
-
-                    <button id="btn-volver" class="btn-accion" onclick="window.location.href='index.html'"> 
+                    
+                    <!-- NOTA: onclick="window.location.href='index.html'" permite que el usuario "salga" de la vista de sus álbumes favoritos 
+                     y regrese de inmediato a la  página de inicio, basicamente es una forma de usar el "href" pero controlado mediante el js -->
+                    <button id="btn-volver" class="btn-accion" onclick="window.location.href='index.html'">  <!-- boton de  volver a la pagina principal -->
                         <img src="imagenes/salir-de-pagina-logo.png" alt="Icono Volver"> 
-                        <span>Volver</span> 
+                        <span>Volver</span>  <!-- subtitulo del boton-->
                     </button>
                 </div>
             </div>
         </header>
 
         <main id="main-Principal"> <!-- Contenido Principal de la Página -->
-            <div class="encabezado-tabla"> 
-                <h2 class="titulo-seccion">Álbumes Favoritos</h2> 
+            <div class="encabezado-tabla"> <!-- contenido encima de la tabla -->
+                <h2 class="titulo-seccion">Álbumes Favoritos</h2> <!-- titulo encima de la tabla -->
 
-                <div class="contenedor-filtro"> 
+                <div class="contenedor-filtro"> <!-- menu de selector para un filtro dinamico-->
                     <select id="filtro-estrellas" class="selector-cuadrado"> 
                         <option value="todos">Todos</option> 
                         <option value="0">Sin estrellas</option> 
@@ -49,10 +51,10 @@
                 </div>
             </div>
 
-            <div class="contenedor-responsivo-tabla"> 
-                <table class="tabla-albumes" id="tabla-favoritos"> 
-                    <thead> 
-                        <tr> 
+            <div class="contenedor-tabla"> <!-- tabla con los albumes favortios del usuario--> 
+                <table class="tabla-albumes" id="tabla-favoritos">  <!-- declaracion de tabla -->
+                    <thead> <!-- cabezera de la tabla -->
+                        <tr> <!-- columnas -->
                             <th>Portada</th> 
                             <th>ID</th> 
                             <th>Álbum</th> 
@@ -60,8 +62,9 @@
                             <th>Calificación</th> 
                         </tr>
                     </thead>
-
-                    <tbody id="cuerpo-tabla"> </tbody>
+                    
+                    <!-- cuerpo de la tabla, dejamos el espacio vacio para los albumes que vengan de la pagina principal del usuario-->
+                    <tbody id="cuerpo-tabla"> </tbody> 
                 </table>
             </div>
         </main>
@@ -70,6 +73,8 @@
             <p>&copy; Pixel radio fue creado en mayo de 2026 - todo los derechos reservados|UCAB|Instagram|X|Facebook|Youtube|</p>
         </footer>
         
+        <!-- declaramos el js antes del <body> para que el script tenga todo la base del pagina(tabla) para colocar los datos que 
+            almaceno desde la pagina principal -->
         <script src="script-mis-albumes.js"></script>
     </body>
 </html>

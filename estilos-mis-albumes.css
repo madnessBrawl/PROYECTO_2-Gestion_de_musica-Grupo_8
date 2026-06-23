@@ -1,4 +1,4 @@
-/* ================= VARIABLES EXCLUSIVAS DEl mis-albumes.html ================= */
+/* ================= VARIABLES EXCLUSIVAS DE mis-albumes.html ================= */
 
 :root {
     --color-tabla-cabecera: #ffff33; /* Amarillo del boceto */
@@ -10,17 +10,20 @@
     --color-tabla-fila: #2d5a1e; /* Verde oscuro */
 }
 
-/* ================= MODIFICACIONES AL HEADER BASE ================= */
+/* ================= MODIFICACIONES AL MARCO SUPERIOR ================= */
+
 /* Sobrescribimos el justify-content base para separar el logo de los botones */
 .marco-superior-contenido {
     justify-content: space-between !important; 
 }
-
-.controles-derecha {
+/* contenido del marco superior a la derecha*/
+.botones-header-derecha {
     display: flex; /* Agrupa botones a la derecha */
-    gap: 20px; /* Separación entre botones */
+    gap: 25px; /* Separación entre botones */
+    align-items: center;
 }
 
+/*botones del marco superior*/
 .btn-accion {
     background: transparent; /* Sin fondo */
     border: none; /* Sin borde */
@@ -31,85 +34,103 @@
     color: var(--color-texto-principal); /* Hereda color del tema */
     font-weight: bold; /* Texto resaltado */
     font-family: inherit; /* Hereda tipografía */
+    font-size: 16px; /* tamaño de la fuente del texto */
+    transition: transform 0.2s;
 }
 
+/*efecto en los botones al pasar el cursor sobre ellos*/
+.btn-accion:hover {
+    transform: scale(1.05); /* Efecto sutil al pasar el cursor */
+}
+
+/*imagenes de los botones*/
 .btn-accion img {
-    width: 40px; /* Tamaño del icono */
-    height: 40px;
-    margin-bottom: 5px; /* Espaciado con el texto */
+    width: 52px; /* anchura */
+    height: 52px; /* altura */
+    margin-bottom: 6px; /* Espaciado con el texto */
 }
 
-/* ================= CONTENIDO ESPECÍFICO (FILTRO Y TABLA) ================= */
+/* ================= CONTENIDO DE LA PAGINA (FILTRO Y TABLA) ================= */
+
+/* contenido arriba de la tabla */
 .encabezado-tabla {
     display: flex; /* Alinea título y filtro */
     justify-content: space-between; /* Extremos opuestos */
-    align-items: flex-end; /* Alinea por debajo */
-    margin-bottom: 15px; /* Separación de la tabla */
+    align-items: center; /* Alineación centrada para que el select cuadre perfectamente con el título */
+    margin-bottom: 20px; /* Separación de la tabla */
 }
 
+/*titulo abajo del marco superior*/
 .titulo-seccion {
     font-size: 32px; /* Título principal */
-    font-weight: bold;
+    font-weight: bold; /* Negrita */
 }
 
+/*contenido del filtro dinamico*/
 .contenedor-filtro {
-    display: flex; 
-    flex-direction: column; 
-    align-items: flex-end; /* Justifica a la derecha */
+    display: flex;  /* Alinea etiqueta y selector */
+    flex-direction: column;  /* Apila elementos */
+    justify-content: center; /* Centrado vertical al no tener label */
 }
 
-
-
+/* boton <select> de forma cuadrada */
 .selector-cuadrado {
     background-color: var(--color-tabla-cabecera); /* Amarillo */
-    color: #000; /* Texto siempre negro */
+    color: black; /* Texto siempre negro */
     border: 2px solid var(--color-texto-principal); /* Borde que se adapta al tema */
     padding: 10px 30px; /* Tamaño */
-    font-size: 18px; 
-    font-weight: bold; 
-    cursor: pointer; 
+    font-size: 18px;  /* Texto legible */
+    font-weight: bold;  /* Texto fuerte */
+    cursor: pointer;  /* Cursor de mano */
 }
 
-.contenedor-responsivo-tabla {
-    width: 100%; 
+/* contenedor de la tabla */
+.contenedor-tabla {
+    width: 100%;  /*ocupa el 100% del espacio dado*/
     overflow-x: auto; /* Permite scroll horizontal en móviles */
 }
 
+/*tabla de albumes favoritos*/
 .tabla-albumes {
-    width: 100%; 
+    width: 100%; /* Ocupa el ancho total */
     border-collapse: collapse; /* Une bordes */
     text-align: center; /* Centra textos */
-    font-size: 18px; 
-    font-weight: bold; 
+    font-size: 18px;  /* Tamaño base */
+    font-weight: bold;  /* Negritas */
 }
 
+/*columnas de la tabla*/
 .tabla-albumes th {
-    background-color: var(--color-tabla-cabecera); 
-    color: #000; 
-    padding: 15px; 
+    background-color: var(--color-tabla-cabecera); /*color de fondo*/
+    color: black;  /* Texto negro */
+    padding: 15px;  /* Espaciado celda */
 }
 
+/*datos de la tabla*/
 .tabla-albumes td {
-    padding: 15px; 
+    padding: 15px; /* Espaciado celdas cuerpo */
     background-color: var(--color-tabla-fila); 
-    color: #fff; /* Texto blanco (Boceto) */
-    border-bottom: 4px solid #fff; /* Línea separadora blanca */
+    color: white; /* Texto blanco  */
+    border-bottom: 4px solid white; /* Línea separadora blanca */
 }
 
+/*portadas pequeñas de la tablas*/
 .portada-img {
-    width: 60px; 
-    height: 60px; 
+    width: 60px; /*anchura*/
+    height: 60px;  /*altura*/
     object-fit: cover; /* Evita que la imagen se aplaste */
 }
 
+/*variable para las imagenes de estrellas para la calificacion (se uso en el js)*/
 .estrella-calificacion {
-    width: 30px; 
-    height: 30px; 
-    cursor: pointer; 
-    margin: 0 2px; 
+    width: 30px;  /*anchura*/
+    height: 30px;  /*altura*/
+    cursor: pointer;  /* Indica clickeable */
+    margin: 0 2px;  /* Separación entre estrellas */
     transition: transform 0.2s; /* Efecto hover */
 }
 
+/*efecto al pasar el raton encima de las estrellas*/
 .estrella-calificacion:hover {
     transform: scale(1.2); /* Crece ligeramente al pasar el mouse */
 }
